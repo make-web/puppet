@@ -1,0 +1,17 @@
+# REQUIRED. This sets up the webserver.
+tilde::hostname: ss.cx
+
+# OPTIONAL. This allows you to customize the package listing for your
+# server. The default packages are in manifests/packages.pp.
+# tilde::addtl_packages:
+#   - angband
+
+# REQUIRED (if you want users other than root :) ). Each entry here
+#  also supports a pubkey_type field in case the user isn't using
+#  ssh-rsa. Check the docs on puppet's authorized_key type to see what
+#  is supported.
+tilde::users:
+  ajm:
+    user: 'ajm',
+    type: 'ssh_rsa',
+    pubkey: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDJVGvTSCY1XnmW386TIRk4FwQGk025Y1ZDE+nr2OiqnbvHEVs5hNPp/wrjHxTgtATyHESss5USTZZvh3gRj48Qa4ZzM+qA9WR87YWYw62Y9qtKreUTxlsH72JG9pCh+hccuzy8ASp75e8XvFEhCR+h1CmjAlSb8Q6NmNr1MBpfJDXpPCUXVg8CFegCLxwMSilXSEl2T1GHQQx1ZaZyZ/YtoYgCN2ERnE5dGyjldgsXmMu7xCoM19iMbOgNSlMCVWisDpUYi/Vd6UcMYC4EvH2layi7Hrcg8eVzhhNvTeUMrPJithioYu6+AeVQVaKcYes0cI2Se3xvlv5/ub8xfD13'
